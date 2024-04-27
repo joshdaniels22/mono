@@ -1,41 +1,24 @@
-# Shows you can set the return variables before the return statement
+# Golang Cheat Sheet
+
+## Printing Values
+Print all struct details: struct name, field names, and values: 
 ```
-package main
-
-import "errors"
-
-func main() {
-	er := x()
-	if er != nil {
-		println("error")
-	}
-}
-
-func x() (err error) {
-	err = errors.New("this error")
-	return
-}
+fmt.Printf("value: %#v\n", val)
 ```
 
-# For running unit tests with `//go:build unit_test` tag
-```
-ginkgo -tags=unit_test
-```
+## Running Unit Tests with Build Tags
+File Tag: `//go:build unit_test`
 
-# To go fmt
-```
-gofmt -s -w .
+Command: `ginkgo -tags=unit_test`
 
-// and
-
-gofumpt -l -w .
-
-// and
-
-gci write .
-```
-
-# To lint
+## Linting
 ```
 golangci-lint run
 ```
+
+## Formatting Files
+Standard 'gofmt': `gofmt -s -w .`
+
+Stricter 'gofumpt': `gofumpt -l -w .`
+
+GCI format: `gci write .`
