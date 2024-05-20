@@ -17,4 +17,11 @@ to get the alias used:
 $ type gs
 git status
 ```
-
+## Show Directory History
+```bash
+$ d 
+0   ~/Documents/ObsidianSync
+1   ~/Documents 
+2   ~ 
+3   ~/Developer/apps/squash
+```
