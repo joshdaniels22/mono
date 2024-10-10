@@ -1,0 +1,11 @@
+---
+- name: My setup script
+  gather_facts: yes
+  hosts: local
+  tasks:
+    - name: Install Tmux
+      become: "{{ ansible_os_family != 'Darwin' }}"
+      package:
+        name: tmux
+        state: latest
+
