@@ -25,3 +25,9 @@ $ d
 2   ~ 
 3   ~/Developer/apps/squash
 ```
+
+## Use Vim Keybindings in Terminal
+(put in your rc file)
+```bash
+$ set -o vi
+```
