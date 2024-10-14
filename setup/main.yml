@@ -7,5 +7,14 @@
       become: "{{ ansible_os_family != 'Darwin' }}"
       package:
         name: tmux
-        state: latest
+        state: present
+    - name: Check tmux config file exists
+      stat:
+        path: ~/.tmux.conf
+      register: tmux_config_file
+    - name: Create tmux config
+      copy:
+        src: ../config/.tmux.conf
+        dest: ~/.tmux.conf
+      when: not tmux_config_file.stat.exists
 
