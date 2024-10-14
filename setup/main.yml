@@ -17,4 +17,9 @@
         src: ../config/.tmux.conf
         dest: ~/.tmux.conf
       when: not tmux_config_file.stat.exists
+    - name: Install Neovim
+      become: "{{ ansible_os_family != 'Darwin' }}"
+      package:
+        name: neovim 
+        state: present
 
