@@ -3,6 +3,7 @@
   gather_facts: yes
   hosts: local
   tasks:
+    # Tmux
     - name: Install Tmux
       become: "{{ ansible_os_family != 'Darwin' }}"
       package:
@@ -17,9 +18,29 @@
         src: ../config/.tmux.conf
         dest: ~/.tmux.conf
       when: not tmux_config_file.stat.exists
+      
+    # Neovim      
     - name: Install Neovim
       become: "{{ ansible_os_family != 'Darwin' }}"
       package:
         name: neovim 
         state: present
-
+    - name: Ensure git is installed
+      ansible.builtin.package:
+        name: git
+        state: present
+    - name: Clone the Git repository
+      ansible.builtin.git:
+        repo: 'https://github.com/NvChad/starter'
+        dest: '~/.config/nvim'
+        depth: 1
+    - name: Check neovim config exists
+      stat:
+        path: ~/.config/nvim
+      register: neovim_config_dir
+    - name: Create neovim config
+      copy:
+        src: ../config/nvim
+        dest: ~/.config
+      when: not neovim_config_dir.stat.exists
+ 
