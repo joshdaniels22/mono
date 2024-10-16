@@ -29,11 +29,6 @@
       ansible.builtin.package:
         name: git
         state: present
-    - name: Clone the Git repository
-      ansible.builtin.git:
-        repo: 'https://github.com/NvChad/starter'
-        dest: '~/.config/nvim'
-        depth: 1
     - name: Check neovim config exists
       stat:
         path: ~/.config/nvim
