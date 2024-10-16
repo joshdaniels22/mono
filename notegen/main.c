@@ -11,7 +11,7 @@ int main() {
     timer = time(NULL);
     tm_info = localtime(&timer);
 
-    strftime(buffer, 26, "%Y-%m-%d %a.md", tm_info);
+    strftime(buffer, 26, "%y_%m_%d_%a.md", tm_info);
       FILE *fptr;
 
   // Create a file on your computer (filename.txt)
