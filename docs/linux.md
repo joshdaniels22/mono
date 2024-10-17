@@ -36,3 +36,8 @@ $ set -o vi
 ```bash
 $ last -aiF
 ```
+
+## Show When a Specific User Last Logged In
+```bash
+$ lastlog -u joshuada
+```
