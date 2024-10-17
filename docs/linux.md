@@ -31,3 +31,8 @@ $ d
 ```bash
 $ set -o vi
 ```
+
+## Show Login History
+```bash
+$ last -aiF
+```
