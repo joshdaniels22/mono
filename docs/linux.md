@@ -54,3 +54,9 @@ $ last -aiF
 ```bash
 $ lastlog -u joshuada
 ```
+
+## Use Traceroute on Linux Virtual Machine
+You need to use the ICMP packets (specified with -I) rather than UDP packets (which are the default) because Windows uses ICMP.
+```bash
+$ traceroute -I google.com
+```
