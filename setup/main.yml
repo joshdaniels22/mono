@@ -25,10 +25,6 @@
       package:
         name: neovim 
         state: present
-    - name: Ensure git is installed
-      ansible.builtin.package:
-        name: git
-        state: present
     - name: Check neovim config exists
       stat:
         path: ~/.config/nvim
