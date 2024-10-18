@@ -45,3 +45,12 @@ then run
 bind -f ~/.inputrc
 ```
 
+## Show Login History
+```bash
+$ last -aiF
+```
+
+## Show When a Specific User Last Logged In
+```bash
+$ lastlog -u joshuada
+```
